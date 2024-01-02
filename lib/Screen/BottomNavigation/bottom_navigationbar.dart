@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../Favorite Screen/favorite_screen.dart';
-import '../Home Screen/home_sceen.dart';
 import '../Listalt_Screen/listalt_screen.dart';
 import '../Notification Screen/notification_screen.dart';
 import '../Person Screen/person_screen.dart';
 import '../Scarch Screen/scarch_screen.dart';
-import 'bottom_nab_controller.dart';
 
 class BottomNavBar extends StatefulWidget {
 
@@ -26,7 +24,7 @@ List  bottomIcon = [
     ];
 
     List  pageList=[
-      HomeScreen(),
+      Scarch_Screen(),
       Listalt_Screen(),
       Favorite_Screen(),
       Notification_Screen(),
@@ -38,8 +36,16 @@ List  bottomIcon = [
   Widget build(BuildContext context) {
     return Scaffold(
           bottomNavigationBar: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
+                ),
+              border: Border.all(color: Colors.white,width: 4),
+              
+            ),
         height: 60,
-        color: Colors.white,
         child:Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [

@@ -12,10 +12,10 @@ class SingInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     var size = MediaQuery.of(context).size;
-    return  Scaffold(
-       body: SingleChildScrollView(
-         child: Stack(children: [
+    var size = MediaQuery.of(context).size;
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Stack(children: [
           Container(
             height: size.height,
             width: size.width,
@@ -30,8 +30,8 @@ class SingInScreen extends StatelessWidget {
             children: [
               Container(
                   height: size.height * 0.2,
-                  child:
-                      Center(child: Image.asset('assets/images/foodpanda.png'))),
+                  child: Center(
+                      child: Image.asset('assets/images/foodpanda.png'))),
               const SizedBox(
                 height: 22,
               ),
@@ -111,40 +111,40 @@ class SingInScreen extends StatelessWidget {
                 width: MediaQuery.of(context).size.width * 0.8,
                 height: MediaQuery.of(context).size.width * 0.1,
                 child: InkWell(
-                  onTap: (){
-                // Get.to(()=>Search_Screen());
+                  onTap: () {
+                    // Get.to(()=>Search_Screen());
                   },
-                  child: Center(
-                      child: const Text(
+                  child:const Center(
+                      child: Text(
                     "LOGIN",
                     style: TextStyle(fontSize: 20, color: Colors.white),
                   )),
                 ),
               ),
-             
-              SizedBox(
+             SizedBox(
                 height: 20,
               ),
-
-               RichText(
-                        text: TextSpan(children: [
-                      TextSpan(
-                          text: ' ALREADY HAVE AN ACCOUNT ? ',
-                          style: TextStyle(color: Colors.grey)),
-                      TextSpan(
-                          text: 'LOG IN',
-                          recognizer: new TapGestureRecognizer()..onTap = () => {
-                            Navigator.push(context, MaterialPageRoute(
-                                builder: (context) => SingUpScreen()),
+              RichText(
+                  text: TextSpan(children: [
+               const TextSpan(
+                    text: ' ALREADY HAVE AN ACCOUNT ? ',
+                    style: TextStyle(color: Colors.grey)),
+                TextSpan(
+                    text: 'LOG IN',
+                    recognizer: new TapGestureRecognizer()
+                      ..onTap = () => {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SingUpScreen()),
                             )
                           },
-                          style: TextStyle(color: Colors.deepPurpleAccent)),
-                    ]))
-           
+                    style: const TextStyle(color: Colors.deepPurpleAccent)),
+              ]))
             ],
           ),
-             ]),
-       ),
+        ]),
+      ),
     );
   }
 }

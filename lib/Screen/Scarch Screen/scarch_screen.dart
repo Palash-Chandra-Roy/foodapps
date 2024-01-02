@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/Screen/Favorite%20Screen/favorite_screen.dart';
-import 'package:food_app/Screen/Home%20Screen/home_sceen.dart';
-import 'package:food_app/Screen/Listalt_Screen/listalt_screen.dart';
-import 'package:food_app/Screen/Notification%20Screen/notification_screen.dart';
-import 'package:food_app/Screen/Person%20Screen/person_screen.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import '../BottomNavigation/bottom_navigationbar.dart';
 import '../Restanual/Restanual Screen/restanual_screen.dart';
 
 class Scarch_Screen extends StatefulWidget {
@@ -18,10 +11,8 @@ class Scarch_Screen extends StatefulWidget {
 }
 
 class _Scarch_ScreenState extends State<Scarch_Screen> {
-
   @override
   Widget build(BuildContext context) {
-    
     var size = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
@@ -38,11 +29,11 @@ class _Scarch_ScreenState extends State<Scarch_Screen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
+              SizedBox(
                   height: size.height * 0.2,
                   child: Row(
-                    children:const [
-                       Padding(
+                    children: const [
+                      Padding(
                         padding: EdgeInsets.only(left: 20),
                         child: CircleAvatar(
                           backgroundImage:
@@ -50,7 +41,7 @@ class _Scarch_ScreenState extends State<Scarch_Screen> {
                           radius: 30,
                         ),
                       ),
-                       SizedBox(
+                      SizedBox(
                         width: 20,
                       ),
                       Text(
@@ -98,10 +89,10 @@ class _Scarch_ScreenState extends State<Scarch_Screen> {
                 width: MediaQuery.of(context).size.width * 0.8,
                 height: MediaQuery.of(context).size.width * 0.1,
                 child: InkWell(
-                  onTap: (){
-                    Get.to(()=>RestanualScreen());
+                  onTap: () {
+                    Get.to(() => RestanualScreen());
                   },
-                  child:  Center(
+                  child: const Center(
                       child: Text(
                     "Search",
                     style: TextStyle(fontSize: 20, color: Colors.white),
@@ -112,20 +103,6 @@ class _Scarch_ScreenState extends State<Scarch_Screen> {
           ),
         ]),
       ),
-       
-      //   currentIndex: 4,
-      //   selectedItemColor: Colors.amber,
-      //   backgroundColor: Colors.transparent,
-      //   items:
-      //  [
-      //   BottomNavigationBarItem(icon: Icon(Icons.home),label: 'home' ),
-      //     BottomNavigationBarItem(icon: Icon(Icons.add),label: 'home' ),
-      //       BottomNavigationBarItem(icon: Icon(Icons.home),label: 'home' ),
-      //         BottomNavigationBarItem(icon: Icon(Icons.home),label: 'home' ),
-      //           BottomNavigationBarItem(icon: Icon(Icons.home),label: 'home' ),
-      // ]),
-  
-      
     );
   }
 }

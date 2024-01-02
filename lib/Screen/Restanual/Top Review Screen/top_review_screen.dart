@@ -1,26 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-class Favorite_Screen extends StatelessWidget {
-   Favorite_Screen({super.key});
+class TopReviewScreen extends StatelessWidget {
+  const TopReviewScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-       appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: Colors.red,
-          title: Text("FEVORITES"),
-          leading: IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.search,
-              color: Colors.white,
-            ),
-          ),
-          
-          ),
-     body:  ListView.builder(
+    Size size = MediaQuery.of(context).size;
+    return ListView.builder(
         itemCount: 5,
         scrollDirection: Axis.vertical,
         primary: true,
@@ -37,11 +24,11 @@ class Favorite_Screen extends StatelessWidget {
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(15),
                           topRight: Radius.circular(15)),
-                      child: Image.asset("assets/images/greel.png")),
+                      child: Image.asset("assets/images/lamp.png")),
                   Padding(
                     padding: EdgeInsets.only(top: 20, left: 20),
                     child: Text(
-                      "Grilled Squid tentacles",
+                      "Tuna Sushi Platter (3 Types)",
                       style: TextStyle(
                           fontSize: 14,
                           color: Colors.black,
@@ -51,7 +38,7 @@ class Favorite_Screen extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(left: 20, top: 10),
                     child: Text(
-                      "sushi pletter (2 pcs). Semi-fatty Tuna (2 pcs),\n Prime Fatty Tuna(2 pcs)",
+                      "sushi I Tuna (2 pcs). Semi-fatty Tuna (2 pcs),\n Prime Fatty Tuna(2 pcs)",
                       style: TextStyle(fontSize: 12, color: Colors.black),
                     ),
                   ),
@@ -85,8 +72,6 @@ class Favorite_Screen extends StatelessWidget {
               ),
             ),
           );
-        }))
-    );
-    
+        }));
   }
 }
